@@ -85,6 +85,13 @@
 //!
 //! Documentation and further examples for each module can be found in the module descriptions below.
 
+// activate flame for the whole crate
+#![cfg_attr(feature="flame_it", feature(plugin))]
+#![cfg_attr(feature="flame_it", plugin(flamer))]
+
+#[cfg(feature="flame_it")]
+extern crate flame;
+
 #[macro_use]
 extern crate approx;
 extern crate bit_set;
